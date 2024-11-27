@@ -1,0 +1,12 @@
+1.  Go the project root.
+
+2.  GPSEmulator.java actually sends emulated GPS data, sentence-by-sentence which can be read and recievied by NMEA0183Display.java
+
+3.  FrameSendEmulator.java sends emulated GPS data, byte-by-byte which can be read and recieved by FrameGetDisplay.java, byte-by-byte.
+4.  FrameGetDisplay.java also verifies the checksum, and it is anti-spoof, as if the distance between the given coordinates and
+    previous coordinates is greater than 8000 km (can be changed), it will display it as invalid.
+
+5.  Compilation - javac -cp "lib/*" src/program_name.java
+6.  Execution - java -cp "lib/*;src" program_name
+
+7.  I have used a virtual serial port as the channel of communication.
